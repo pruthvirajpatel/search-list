@@ -2,14 +2,18 @@
 ## Assumptions Made
 
 **Using angular and angular material**
+<br/>
 **Angualr material gives me default option for selecting the elements and searching which meets the requirements.**
+<br/>
 **Using autocompltle module for showing the drop down based on search**
+<br/>
 **Angular material gives me an option of keyboard navigation for drop down value selection**
+<br/>
 **Using pipe filter  for highlighting the text**
+<br/>
 **Using angualar forms module for input search**
+<br/>
 **Using the mat chips module for showing the seleted value from the drop down, gives me an option to add and remove the elements**
-
-
 
 ##### search-list
 Auto select multiple values from drop down by searching
