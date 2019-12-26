@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <mat-form-field class="search-container">
+    <mat-chip-list #suggestionList aria-label="Fruit selection">
+      <mat-chip *ngFor="let suggestion of suggestions" [selectable]="selectable" [removable]="removable"
+        (removed)="remove(suggestion)">
+        {{suggestion}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
+    <input placeholder="Search for Suggestions" #suggestionInput [(ngModel)]="searchQuery"
+      (ngModelChange)="searchQueryUpdate.next($event)" [matAutocomplete]="auto" [matChipInputFor]="suggestionList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes">
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <ng-container *ngFor="let suggestion of allSuggestions">
+        <mat-option [value]="suggestion">
+          <span  [innerHTML]="suggestion | highlight: searchQuery"></span>
+        </mat-option>
+      </ng-container>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>
